@@ -48,7 +48,6 @@ const isThursday = (date?: Date): date is ThursdayOrEmpty => {
 
 const isFriday = (date?: Date): date is FridayOrEmpty => {
   if (date === undefined) return true;
-  if (date === undefined) return true;
   return date.getDay() === 5;
 };
 

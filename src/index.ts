@@ -11,7 +11,16 @@ import {
 /**
  * create GitHub's Weed placeholder from received start date.
  * @param {Date} startDate start Date of weed
- * @returns {Week} GitHub Weed Calendar placeholder
+ * @returns {Week[]} GitHub Weed Calendar placeholder
+ * @example
+ * Here's a simple example:
+ * ```
+ * const actual = weedize(new Date("2021-01-01"));
+ * // Prints: [[undefined, ..., 2021-01-01T00:00:00.000Z, 2021-01-02T00:00:00.000Z], ..., [...,"2021-12-30T00:00:00.000Z","2021-12-31T00:00:00.000Z", undefined]]
+ * console.log(actual);
+ *
+ * // Caution: the array item type is Date, not string.
+ * ```
  */
 export const weedize = (startDate: Date): Week[] => {
   const nextYear = getNextYear(startDate);
@@ -33,6 +42,3 @@ export const weedize = (startDate: Date): Week[] => {
   }
   return res;
 };
-const date = new Date("2021-01-01");
-const actual = weedize(date);
-console.log(actual);
