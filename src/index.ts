@@ -33,3 +33,6 @@ export const weedize = (startDate: Date): Week[] => {
   }
   return res;
 };
+const date = new Date("2021-01-01");
+const actual = weedize(date);
+console.log(actual);
