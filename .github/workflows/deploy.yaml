@@ -31,6 +31,8 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: doc
+        run: npm run typedoc
       - name: App Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

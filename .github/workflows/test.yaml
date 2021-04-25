@@ -20,5 +20,7 @@ jobs:
         run: npm run lint:ci
       - name: format
         run: npm run format:ci
+      - name: doc
+        run: npm run typedoc
       - name: build
         run: npm run build:dev
