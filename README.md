@@ -5,6 +5,8 @@ It is [[Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday],[Sunday,
 
 ## how to use
 
+Doc: https://sadnessojisan.github.io/weedize/
+
 ```ts
 import { weedize } from "weedize";
 
