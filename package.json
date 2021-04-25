@@ -10,7 +10,8 @@
     "test": "jest",
     "lint:ci": "eslint src/*.ts",
     "typecheck:ci": "tsc --noEmit",
-    "format:ci": "prettier --check src/*.ts"
+    "format:ci": "prettier --check src/*.ts",
+    "typedoc": "typedoc"
   },
   "repository": {
     "type": "git",
