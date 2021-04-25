@@ -27,8 +27,8 @@ export const weedize = (startDate: Date): Week[] => {
   const endDate = getBeforeday(nextYear);
   let dateCursor = new Date(startDate);
   let week: Week = createInitialWeek();
-  let res: Week[] = [];
-  while (true) {
+  const res: Week[] = [];
+  for (;;) {
     insertWeek(dateCursor, week);
     if (dateCursor.getTime() === endDate.getTime()) {
       res.push(week);

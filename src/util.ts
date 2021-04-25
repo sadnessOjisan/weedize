@@ -56,22 +56,22 @@ export const isSaturday = (date?: Date): date is SaturdayOrEmpty => {
   return date.getDay() === 6;
 };
 
-export const getBeforeday = (date: Date) => {
+export const getBeforeday = (date: Date): Date => {
   const copiedDate = new Date(date);
   return new Date(copiedDate.setDate(copiedDate.getDate() - 1));
 };
 
-export const getNextYear = (date: Date) => {
+export const getNextYear = (date: Date): Date => {
   const copiedDate = new Date(date);
   return new Date(copiedDate.setFullYear(copiedDate.getFullYear() + 1));
 };
 
-export const getNextDay = (date: Date) => {
+export const getNextDay = (date: Date): Date => {
   const copiedDate = new Date(date);
   return new Date(copiedDate.setDate(copiedDate.getDate() + 1));
 };
 
-export const insertWeek = (date: Date, week: Week) => {
+export const insertWeek = (date: Date, week: Week): Week => {
   if (isSunday(date)) {
     week[0] = date;
   } else if (isMonday(date)) {
