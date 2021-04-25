@@ -14,12 +14,11 @@ jobs:
       - name: Install npm packages
         run: |
           npm install
-      - name: test
-        run: |
-          npm run test
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only functions --project=default
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: typecheck
+        run: npm run typecheck:ci
+      - name: lint
+        run: npm run lint:ci
+      - name: format
+        run: npm run format:ci
+      - name: build
+        run: npm run build:dev
