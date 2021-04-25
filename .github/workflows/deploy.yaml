@@ -32,7 +32,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: doc
-        run: npm run typedoc
+        run: npm run typedoc src
       - name: App Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

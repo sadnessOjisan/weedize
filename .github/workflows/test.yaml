@@ -22,6 +22,6 @@ jobs:
       - name: format
         run: npm run format:ci
       - name: doc
-        run: npm run typedoc
+        run: npm run typedoc src
       - name: build
         run: npm run build:dev
