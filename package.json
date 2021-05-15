@@ -1,6 +1,6 @@
 {
   "name": "weedize",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "create weed placeholder",
   "main": "./lib/build.js",
   "types": "./lib/index.d.ts",
