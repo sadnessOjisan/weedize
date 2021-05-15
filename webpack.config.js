@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./lib"),
     filename: "build.js",
+    libraryTarget: "umd",
   },
   module: {
     rules: [
