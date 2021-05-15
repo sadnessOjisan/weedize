@@ -1,8 +1,8 @@
 {
   "name": "weedize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "create weed placeholder",
-  "main": "index.js",
+  "main": "./lib/build.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=production webpack",
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/sadnessOjisan/weedize.git"
   },
-  "author": "",
+  "author": "sadnessOjisan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sadnessOjisan/weedize/issues"
