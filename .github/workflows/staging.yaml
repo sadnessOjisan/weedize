@@ -11,16 +11,16 @@ jobs:
         uses: actions/setup-node@v1
       - name: Install npm packages
         run: |
-          npm install
+          yarn install
       - name: typecheck
-        run: npm run typecheck:ci
+        run: yarn run typecheck:ci
       - name: lint
-        run: npm run lint:ci
+        run: yarn run lint:ci
       - name: format
-        run: npm run format:ci
+        run: yarn run format:ci
       - name: doc
-        run: npm run typedoc src
+        run: yarn run typedoc src
       - name: build
-        run: npm run build
+        run: yarn run build
       - name: Can Publish
-        run: npx can-npm-publish --verbose
+        run: yarn can-npm-publish --verbose
