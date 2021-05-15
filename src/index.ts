@@ -6,6 +6,7 @@ import {
   getBeforeday,
   getNextDay,
   createInitialWeek,
+  getPreviousYear,
 } from "./util";
 
 /**
@@ -22,7 +23,7 @@ import {
  * // Caution: the array item type is Date, not string.
  * ```
  */
-export const weedize = (startDate: Date): Week[] => {
+export const weedizeFrom = (startDate: Date): Week[] => {
   const nextYear = getNextYear(startDate);
   const endDate = getBeforeday(nextYear);
   let dateCursor = new Date(startDate);
@@ -31,6 +32,28 @@ export const weedize = (startDate: Date): Week[] => {
   for (;;) {
     insertWeek(dateCursor, week);
     if (dateCursor.getTime() === endDate.getTime()) {
+      res.push(week);
+      break;
+    }
+    if (isSaturday(dateCursor)) {
+      res.push(week);
+      week = createInitialWeek();
+    }
+    dateCursor = getNextDay(dateCursor);
+  }
+  return res;
+};
+
+export const weedizeTo = (end: Date): Week[] => {
+  const previousYear = getPreviousYear(end);
+  const start = getNextDay(previousYear);
+  let dateCursor = new Date(start);
+  let week: Week = createInitialWeek();
+  const res: Week[] = [];
+  console.log(dateCursor);
+  for (;;) {
+    insertWeek(dateCursor, week);
+    if (dateCursor.getTime() === end.getTime()) {
       res.push(week);
       break;
     }
